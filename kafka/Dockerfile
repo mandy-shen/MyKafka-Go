@@ -1,6 +1,12 @@
+FROM scratch AS scratch
+WORKDIR /go
+COPY go.mod .
+COPY go.sum .
+COPY kafka.go .
+
 FROM golang:alpine AS stage1
 WORKDIR /build
-COPY . .
+COPY --from=scratch /go .
 # smaller binary
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags '-w -s -extldflags "-static"' kafka.go
 
