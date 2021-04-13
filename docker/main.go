@@ -12,7 +12,7 @@ import (
 
 const (
 	topic         = "neu-kafka"
-	brokerAddress = "kafka:9092"
+	brokerAddress = "192.168.0.4:9092"
 )
 
 func main() {

@@ -8,5 +8,6 @@ RUN apk add --no-cache bash tar netcat-openbsd \
     && cp kfk_start.sh /usr/bin \
     && rm kfk_start.sh
 ADD kafka_2.12-2.7.0.tgz /
+RUN apk del tar
 ENTRYPOINT [ "/usr/bin/kfk_start.sh" ]
 EXPOSE 9092
