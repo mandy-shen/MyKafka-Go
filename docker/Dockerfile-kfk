@@ -1,0 +1,9 @@
+FROM openjdk:8-jre-alpine
+WORKDIR /
+COPY kfk_start.sh .
+RUN apk add --no-cache bash tar netcat-openbsd \
+&& chmod +x kfk_start.sh \
+    && cp kfk_start.sh /usr/bin
+ADD kafka_2.12-2.7.0.tgz /
+ENTRYPOINT [ "/usr/bin/kfk_start.sh" ]
+EXPOSE 9092

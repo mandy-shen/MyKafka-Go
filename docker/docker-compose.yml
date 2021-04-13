@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+    kafka:
+        hostname: kafka
+        build:
+            context: .
+            dockerfile: Dockerfile-kfk
+        ports:
+            - "9092:9092"
