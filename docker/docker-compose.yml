@@ -9,3 +9,11 @@ services:
             dockerfile: Dockerfile-kfk
         ports:
             - "9092:9092"
+    app:
+        hostname: app
+        container_name: app
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            - kafka
