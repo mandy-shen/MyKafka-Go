@@ -76,3 +76,20 @@ func runKafka() {
 	}
 	fmt.Printf("done!\n")
 }
+
+func consume(ctx context.Context) {
+	r := kafka.NewReader(kafka.ReaderConfig{
+		Brokers: []string{brokerAddress},
+		Topic:   topic,
+		GroupID: "my-group",
+		//Logger:  log.New(os.Stdout, "[kafka reader] ", 0),
+	})
+	for {
+		msg, err := r.ReadMessage(ctx)
+		if err != nil {
+			panic(err.Error())
+		}
+
+		fmt.Println("received: ", string(msg.Value))
+	}
+}
