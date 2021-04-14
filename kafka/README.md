@@ -28,9 +28,12 @@
     * download kafka - https://kafka.apache.org/downloads.html
     * choose: Scala 2.12  - kafka_2.12-2.7.0.tgz
     * unzip kafka_2.12-2.7.0.tgz
-* customize kafka's config - config/server.properties
-    * unmarked advertised.listeners
-        * advertised.listeners=PLAINTEXT://localhost:9092
+        * tar -xzvf kafka_2.12-2.7.0.tgz
+    * customize kafka's config - config/server.properties
+        * unmarked advertised.listeners
+            * advertised.listeners=PLAINTEXT://localhost:9092
+    * tar a new zip
+        * tar -czvf kafka_2.12-2.7.0.tgz /kafka_2.12-2.7.0
 * write executable files - kfk_start.sh & main.go
     * kfk_start.sh
         * make sure that zookeeper and kafka are starting in order
@@ -44,6 +47,7 @@
     * use mini os - alpine
     * leverage CMD as default parameter
     * jre is necessary - kafka base on jvm
+    * use my 
 * push to Docker Hub
     * push code to Github
     * use Github Actions to push to Docker Hub
