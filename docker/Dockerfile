@@ -9,4 +9,4 @@ RUN apk add --no-cache bash tar netcat-openbsd \
 ADD kafka_$KAFKA_VER.tgz /
 RUN apk del tar
 ENTRYPOINT [ "/usr/bin/kfk_start.sh" ]
-EXPOSE 2181 9092 19092
+EXPOSE 2181 9092
