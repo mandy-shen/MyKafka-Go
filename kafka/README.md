@@ -16,6 +16,7 @@
       * {param} :
          * if blank, default is 'add-row neu-student, My Name, ID0000001'
          * it could be changed when typing other inputs starting from "add-row"
+         * ps. MacOS is 'add-row neu-student, My Name, ID0000001', but Windows is "add-row neu-student, My Name, ID0000001", different quotation marks
 4. command examples
    * docker run mandyshen/mykafka
    * docker run mandyshen/mykafka 'add-row neu-student, Julia, ID0000123'
