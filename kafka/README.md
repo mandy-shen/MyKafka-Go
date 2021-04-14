@@ -54,4 +54,4 @@
             * see https://docs.docker.com/ci-cd/github-actions/
             * example: pushDockerHub.yml
     
-### another better way 
+### another better way
