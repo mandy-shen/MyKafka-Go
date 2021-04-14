@@ -18,7 +18,7 @@ const (
 func main() {
 
 	if len(os.Args) != 2 || !strings.HasPrefix(os.Args[1], "add-row") {
-		fmt.Printf("wrong input. example: \'add-row neu-student, My Name, ID0000001\'\n")
+		fmt.Printf("wrong input. example: 'add-row neu-student, My Name, ID0000001'\n")
 		return
 	}
 
