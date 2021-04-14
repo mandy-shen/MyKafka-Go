@@ -43,7 +43,7 @@
         * use main.go as container's entrypoint
 * write Dockerfile
     * start from scratch
-    * use multi-stage to create smaller binary
+    * use multi-stage to create smaller binary - Golang
     * use mini os - alpine
     * jre is necessary - kafka based on jvm
     * use my customize kafka.tar to reduce package time
