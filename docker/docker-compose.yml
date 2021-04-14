@@ -6,7 +6,7 @@ services:
         container_name: kafka
         build:
             context: .
-            dockerfile: Dockerfile-kfk
+            dockerfile: Dockerfile
         ports:
             - "9092:9092"
     app:
@@ -14,6 +14,6 @@ services:
         container_name: app
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: go/Dockerfile
         depends_on:
             - kafka

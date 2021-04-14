@@ -1,7 +1,6 @@
 FROM scratch AS scratch
 WORKDIR /go
-COPY go.* .
-COPY *.go .
+COPY /go .
 
 FROM golang:alpine AS stage1
 WORKDIR /build
@@ -16,5 +15,6 @@ COPY --from=stage1 /build/main /main
 RUN apk add --no-cache bash tar netcat-openbsd \
     && chmod +x /usr/bin/kfk_start.sh
 ADD kafka_$KAFKA_VER.tgz .
+RUN apk del tar
 ENTRYPOINT [ "/main" ]
 CMD [ "add-row neu-student, My Name, ID0000001" ]
