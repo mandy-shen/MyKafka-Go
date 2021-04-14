@@ -7,7 +7,6 @@ import (
 	"os"
 	"os/exec"
 	"strings"
-	"time"
 
 	"github.com/segmentio/kafka-go"
 )
@@ -24,23 +23,14 @@ func main() {
 		return
 	}
 
-	// "add-row neu-student, My Name, ID0000001"
-	// _msg := "add-row neu-student, My Name, ID0000001"
-	_msg := os.Args[1]
-
-	go cmd("zookeeper-server-start.sh", "zookeeper.properties", "zookeeper")
-
-	seconds := 0.5
-	time.Sleep(time.Duration(seconds) * time.Second)
-
-	go cmd("kafka-server-start.sh", "server.properties", "kafka")
-
-	seconds = 6
-	time.Sleep(time.Duration(seconds) * time.Second)
+	runKafka()
 
 	ctx := context.Background()
 	produce(ctx)
 
+	// "add-row neu-student, My Name, ID0000001"
+    // _msg := "add-row neu-student, My Name, ID0000001"
+    _msg := os.Args[1]
 	send(_msg, ctx)
 }
 
@@ -77,11 +67,12 @@ func send(_msg string, ctx context.Context) {
 	fmt.Println(string(msg))
 }
 
-func cmd(sh, prop, name string) {
-	cmd := exec.Command("/kafka_2.12-2.7.0/bin/"+sh, "-daemon", "/kafka_2.12-2.7.0/config/"+prop)
+func runKafka() {
+    fmt.Printf("waiting for kafka running...")
+	cmd := exec.Command("/usr/bin/kfk_start.sh")
 	_, err := cmd.CombinedOutput()
 	if err != nil {
-		log.Fatalf(name+".Run() failed with %s\n", err)
+		log.Fatalf("kafka.Run() failed with %s\n", err)
 	}
-	fmt.Printf(name + " is running...\n")
+	fmt.Printf("done!\n")
 }

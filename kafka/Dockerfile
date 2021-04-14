@@ -12,7 +12,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags '-w -s -extldflags "
 
 FROM openjdk:8-jre-alpine
 COPY kfk_start.sh .
-RUN apk add --no-cache bash tar \
+RUN apk add --no-cache bash tar netcat-openbsd \
     && chmod +x kfk_start.sh \
     && cp kfk_start.sh /usr/bin \
     && rm kfk_start.sh
