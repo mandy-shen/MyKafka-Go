@@ -45,9 +45,10 @@
     * start from scratch
     * use multi-stage to create smaller binary
     * use mini os - alpine
+    * jre is necessary - kafka based on jvm
+    * use my customize kafka.tar to reduce package time
+    * leverage ADD to minimize the image
     * leverage CMD as default parameter
-    * jre is necessary - kafka base on jvm
-    * use my 
 * push to Docker Hub
     * push code to Github
     * use Github Actions to push to Docker Hub
