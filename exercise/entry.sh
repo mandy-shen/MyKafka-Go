@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -e
 
 if [ "$1" = 'postgres' ]; then
     chown -R postgres "$PGDATA"
 
-    if [ -z "$(ls -A "$PGDATA")" ]; then
+    if [ "$1" = 'postgres' ]; then
         gosu postgres initdb
     fi
 
