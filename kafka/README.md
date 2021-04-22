@@ -1,5 +1,3 @@
-# edu.neu.csye6225.assign4
-
 ## Required
 * terminal
 * docker
@@ -22,7 +20,7 @@
    * docker run mandyshen/mykafka 'add-row neu-student, Julia, ID0000123'
 5. see Capture.png
 
-## How to approach this assignment
+## How to approach this project
 ### step of containerizing the software
 * use example kafka as software
     * download kafka - https://kafka.apache.org/downloads.html
