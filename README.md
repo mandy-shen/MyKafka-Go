@@ -1,5 +1,5 @@
 # mykafka-go
-containize existing app(kafka) - use github actions to generate image in dockerhub 
+containize existing open source software(kafka) - use github actions to generate image in dockerhub (github:mykafka-go)
 
 ## Required
 * terminal
