@@ -1,5 +1,7 @@
 # mykafka-go
-containize existing open source software(kafka) - use github actions to generate image in dockerhub
+* Containize existing open source software(kafka).
+* Leverage merging commands, delete caches, squash, Go, alpine, scratch, multi-stage builds to minimize images.
+* Leverage Github Actions to register the image into Docker Hub.
 
 ## Required
 * terminal
