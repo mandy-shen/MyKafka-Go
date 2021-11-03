@@ -1,4 +1,4 @@
-# mykafka-go
+# MyKafka-Go
 * Containize existing open source software(kafka).
 * Leverage merging commands, delete caches, squash, Go, alpine, scratch, multi-stage builds to minimize images.
 * Leverage Github Actions to register the image into Docker Hub.
